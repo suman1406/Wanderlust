@@ -12,7 +12,7 @@ const listingController = require("../controllers/listings.js");
 router
     .route("/")
     .get(wrapAsync(listingController.index)) //Index Route
-    .post(isLoggedIn, upload.single('listing[image]'), validateListing, wrapAsync(listingController.createListing)); //Create Route
+    .post(isLoggedIn, upload.single("listing[image]"), validateListing, wrapAsync(listingController.createListing)); //Create Route
 
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNew);
@@ -20,7 +20,7 @@ router.get("/new", isLoggedIn, listingController.renderNew);
 router
     .route("/:id")
     .get(wrapAsync(listingController.showListing)) //Show Route
-    .put(isLoggedIn, isOwner, upload.single('listing[image]') , validateListing, wrapAsync(listingController.update)) //Update Route
+    .put(isLoggedIn, isOwner, upload.single("listing[image]"), validateListing, wrapAsync(listingController.updateListing)) //Update Route
     .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing)); //Delete Route
 
 //Edit Route
