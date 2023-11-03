@@ -29,7 +29,7 @@ module.exports.createListing = async (req, res, next) => {
         limit: 1,
     })
         .send();
-    //console.log(response.body.features[0].geometry.coordinates);
+    // console.log(response.body.features[0].geometry);
     // res.send("done");
 
     let url = req.file.path;
@@ -38,7 +38,7 @@ module.exports.createListing = async (req, res, next) => {
     newListing.owner = req.user._id;
     newListing.image = { url, filename };
 
-    newListing.geometry = response.body.features[0].geometry.coordinates;
+    newListing.geometry = response.body.features[0].geometry;
 
     let savedListing = await newListing.save();
     console.log(savedListing);

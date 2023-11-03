@@ -28,7 +28,7 @@ const listingSchema = new Schema({
   grometry: {
     type: {
       type: String,
-      enum: ['Point'],
+      enum: ["Point"],
       required: true,
     },
     coordinates: {
