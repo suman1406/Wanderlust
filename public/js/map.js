@@ -1,4 +1,6 @@
-mapboxgl.accessToken = mapToken;
+const mapToken = "<%= process.env.MAP_TOKEN %>";
+const listing = "<%- JSON.stringify(listing) %>";
+mapboxgl.accessToken = 'process.env.MAP_TOKEN';
 
 const map = new mapboxgl.Map({
     container: 'map', // container ID

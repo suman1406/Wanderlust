@@ -25,7 +25,7 @@ const listingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  grometry: {
+  geometry: {
     type: {
       type: String,
       enum: ["Point"],
